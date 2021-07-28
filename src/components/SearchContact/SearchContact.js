@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
+import styles from "../FormStyles/FormStyles.module.css";
+
 function SearchContact({ value, SearchContact }) {
     const id = shortid.generate();
     return (
-        <div>
-            <label htmlFor={id}>Search contact by name</label>
+        <div className={styles.containerSearch}>
+            <label className={styles.labelSearch} htmlFor={id}>Search contact by name</label>
             <input
+                className={styles.inputSearch}
                 type="text"
                 name="filter"
                 value={value}

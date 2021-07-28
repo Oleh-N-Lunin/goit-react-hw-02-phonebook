@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import shortid from 'shortid';
 
+import styles from "../FormStyles/FormStyles.module.css";
+
 class Form extends Component {
     state = {
         name: '',
@@ -38,8 +40,8 @@ class Form extends Component {
         const idNumber = shortid.generate();
 
         return (
-            <form onSubmit={this.addContact}>
-                <label htmlFor={idName}>Name</label>
+            <form className={styles.form} onSubmit={this.addContact}>
+                <label className={styles.labelName} htmlFor={idName}>Name</label>
                 <input
                     id={idName}
                     type="text"
@@ -48,7 +50,7 @@ class Form extends Component {
                     onChange={this.InputValues}
                     autoComplete="off"
                 />
-                <label>Phone number</label>
+                <label className={styles.labelNumber} htmlFor={idNumber}>Phone number</label>
                 <input
                     id={idNumber}
                     type="tel"
@@ -59,7 +61,7 @@ class Form extends Component {
                     autoComplete="off"
                     required
                 />
-                <button type="submit">Add contact</button>
+                <button className={styles.btnForm} type="submit">Add contact</button>
             </form>
         );
     }
