@@ -47,17 +47,18 @@ class Form extends Component {
                     value={this.state.name}
                     onChange={this.InputValues}
                     autoComplete="off"
-                ></input>
+                />
                 <label>Phone number</label>
                 <input
                     id={idNumber}
                     type="tel"
-                    pattern=""
+                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     name="number"
                     value={this.state.number}
                     onChange={this.InputValues}
                     autoComplete="off"
-                ></input>
+                    required
+                />
                 <button type="submit">Add contact</button>
             </form>
         );
